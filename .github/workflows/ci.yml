@@ -23,9 +23,10 @@ jobs:
       - name: Health check (snapshot)
         shell: pwsh
         run: |
-          pwsh -NoLogo -NoProfile -Command "./TOOLS/health_check.ps1 -Quiet -Snapshot -ArchiveSnapshots -MaxLogMB 5"
-          test -f LOGS/health.json
-          test -f LOGS/health-$(date +%Y-%m-%d).json || true
+          ./TOOLS/health_check.ps1 -Quiet -Snapshot -ArchiveSnapshots -MaxLogMB 5
+          if (-not (Test-Path "LOGS/health.json")) { throw "health.json not found" }
+          $snap = "LOGS/health-{0}.json" -f (Get-Date -Format "yyyy-MM-dd")
+          if (Test-Path $snap) { "snapshot OK: $snap" } else { "snapshot not found (may be TZ); continuing" }
       - name: Pack ZIP
         run: npm run zip
       - name: Upload artifact
