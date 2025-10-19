@@ -1,5 +1,6 @@
-﻿# Support the author / оддержать автора
+# Support #BlondeAI
 
-- Boosty: https://boosty.to/yourname
-- BuyMeACoffee: https://www.buymeacoffee.com/yourname
-- DonationAlerts: https://www.donationalerts.com/r/yourname
+Fuel the faith. Fuel the chaos.
+
+- **GitHub Sponsors:** [github.com/sponsors/remontpodklych2020-max](https://github.com/sponsors/remontpodklych2020-max)
+- **Buy Me a Coffee:** [buymeacoffee.com/theblondeai](https://buymeacoffee.com/theblondeai)
