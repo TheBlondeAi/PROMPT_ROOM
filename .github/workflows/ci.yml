@@ -17,7 +17,7 @@ jobs:
       - run: npm run build:dash
       - run: ls -la WEB/dist
       - name: Setup PowerShell
-        uses: PowerShell/PowerShell@v1
+        uses: PowerShell/PowerShell-Action@v1
         with:
           version: "7.4.x"
       - name: Health check (snapshot)
