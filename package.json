@@ -1,0 +1,18 @@
+﻿{
+  "name": "prompt-room",
+  "version": "1.0.0",
+  "description": "Prompt Library + Health Dashboard + CI/Release tooling",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build:chart": "esbuild WEB/src/trend-chart.ts --bundle --outfile=WEB/dist/trend-chart.js --format=esm --platform=browser --minify",
+    "build:dash": "npm run build:chart",
+    "zip": "node WEB/scripts/make-zip.js",
+    "smoke": "node -e \"console.log('Smoke OK')\""
+  },
+  "devDependencies": {
+    "adm-zip": "^0.5.10",
+    "esbuild": "^0.23.0",
+    "typescript": "^5.6.2"
+  }
+}
