@@ -1,0 +1,23 @@
+﻿<!doctype html>
+<html lang=\"ru\">
+<head>
+  <meta charset=\"utf-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+  <title>PROMPT_ROOM Dashboard</title>
+  <link rel=\"stylesheet\" href=\"styles/dashboard.css\" />
+</head>
+<body>
+  <main class=\"wrap\">
+    <h1>PROMPT_ROOM — Health</h1>
+    <section class=\"card\">
+      <svg id=\"trend\" width=\"960\" height=\"260\" role=\"img\" aria-label=\"Failure trend\"></svg>
+    </section>
+  </main>
+  <script type=\"module\">
+    import { TrendChart } from './dist/trend-chart.js';
+    const svg = document.getElementById('trend');
+    const chart = new TrendChart(svg);
+    chart.render([]);
+  </script>
+</body>
+</html>

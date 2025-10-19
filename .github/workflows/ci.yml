@@ -1,0 +1,35 @@
+﻿name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build:dash
+      - run: ls -la WEB/dist
+      - name: Setup PowerShell
+        uses: PowerShell/PowerShell@v1
+        with:
+          version: "7.4.x"
+      - name: Health check (snapshot)
+        shell: pwsh
+        run: |
+          pwsh -NoLogo -NoProfile -Command "./TOOLS/health_check.ps1 -Quiet -Snapshot -ArchiveSnapshots -MaxLogMB 5"
+          test -f LOGS/health.json
+          test -f LOGS/health-$(date +%Y-%m-%d).json || true
+      - name: Pack ZIP
+        run: npm run zip
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: prompt-room-zip
+          path: releases/*.zip

@@ -1,0 +1,5 @@
+﻿:root { color-scheme: dark; }
+body { margin:0; background:#0b0d10; color:#e5e7eb; font-family: ui-sans-serif, system-ui, Segoe UI, Roboto; }
+.wrap { max-width:1080px; margin:24px auto; padding:0 16px; }
+.card { background:#0f1318; border:1px solid #1f2937; border-radius:12px; padding:16px; box-shadow:0 6px 20px rgba(0,0,0,.25); }
+.svg-grid-line { stroke: rgba(255,255,255,.12); stroke-width:1; stroke-dasharray:4 4; }

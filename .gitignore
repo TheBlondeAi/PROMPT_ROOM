@@ -1,0 +1,52 @@
+﻿# PROMPT_ROOM v1
+
+отовый модуль для библиотеки промптов: стандарты (RULES), примеры (PROMPTS),
+инструменты качества (TOOLS: валидатор, health-check, отчёты), веб-дашборд (WEB),
+и конвейер релиза (ZIP + CI).
+
+## ыстрый старт
+`powershell
+npm i
+npm run build:dash
+# Снимок здоровья (PowerShell 7+):
+pwsh -File TOOLS/health_check.ps1 -Quiet -Snapshot -ArchiveSnapshots
+# ткрой WEB/index.html — тренд ошибок
+# а всякий случай в нужную папку
+Set-Location "C:\Users\Sergeevich\PROMPT_ROOM"
+
+# ---- README (RU) перепишем целиком (исправит обрезанный блок) ----
+@"
+# PROMPT_ROOM v1
+
+отовый модуль для библиотеки промптов: стандарты (RULES), примеры (PROMPTS),
+инструменты качества (TOOLS: валидатор, health-check, отчёты), веб-дашборд (WEB),
+и конвейер релиза (ZIP + CI).
+
+## ыстрый старт
+`powershell
+npm i
+npm run build:dash
+# Снимок здоровья (PowerShell 7+):
+pwsh -File TOOLS/health_check.ps1 -Quiet -Snapshot -ArchiveSnapshots
+# ткрой WEB/index.html — тренд ошибок
+npm i
+npm run build:dash
+pwsh -File TOOLS/health_check.ps1 -Quiet -Snapshot -ArchiveSnapshots
+# open WEB/index.html
+
+скажи «отово» — дам  3: git add/commit/push, 
+pm i, сборка, health-check, git tag v1.0.0 и пуш тега (запустит Release).
+# ===  2: структура и файлы PROMPT_ROOM v1 ===
+Set-Location "C:\Users\Sergeevich\PROMPT_ROOM"
+
+# 1) ерево папок
+"RULES","PROMPTS","LOGS","TOOLS","WEB\src","WEB\dist","WEB\styles","WEB\scripts","docs","releases",".github\workflows" |
+  ForEach-Object { New-Item -ItemType Directory -Path  -Force | Out-Null }
+
+# 2) .gitignore / .gitattributes / .editorconfig
+@"
+node_modules/
+WEB/dist/
+releases/
+.DS_Store
+*.log
