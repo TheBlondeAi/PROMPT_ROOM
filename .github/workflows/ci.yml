@@ -16,10 +16,6 @@ jobs:
       - run: npm ci
       - run: npm run build:dash
       - run: ls -la WEB/dist
-      - name: Setup PowerShell
-        uses: PowerShell/install-powershell@v1
-        with:
-          version: "7.4.x"
       - name: Health check (snapshot)
         shell: pwsh
         run: |
