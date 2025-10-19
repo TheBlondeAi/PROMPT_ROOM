@@ -1,5 +1,23 @@
-﻿:root { color-scheme: dark; }
-body { margin:0; background:#0b0d10; color:#e5e7eb; font-family: ui-sans-serif, system-ui, Segoe UI, Roboto; }
-.wrap { max-width:1080px; margin:24px auto; padding:0 16px; }
-.card { background:#0f1318; border:1px solid #1f2937; border-radius:12px; padding:16px; box-shadow:0 6px 20px rgba(0,0,0,.25); }
-.svg-grid-line { stroke: rgba(255,255,255,.12); stroke-width:1; stroke-dasharray:4 4; }
+﻿:root { color-scheme: dark; } 
+body { margin:0; background:#0b0d10; color:#e5e7eb; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; } 
+.wrap { max-width: 1080px; margin: 24px auto; padding: 0 16px; } 
+.card { background:#0f1318; border:1px solid #1f2937; border-radius:12px; padding:16px; box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+
+/* SVG classes */ 
+.svg-grid-line { stroke: rgba(255,255,255,.12); stroke-width:1; stroke-dasharray:4 4; } 
+.svg-grid-text { fill: rgba(255,255,255,.55); font-size:11px; dominant-baseline:ideographic; } 
+.svg-rate-line { fill:none; stroke:#22c55e; stroke-width:2; } 
+.svg-point { fill:#22c55e; cursor:pointer; } 
+.svg-date { fill: rgba(255,255,255,.55); font-size:11px; text-anchor:middle; } 
+.svg-date-active { fill:#c7d2fe !important; } 
+.svg-tooltip-bg { fill: rgba(0,0,0,.65); rx:4; } 
+.svg-tooltip-text { fill:#fff; font-size:12px; text-anchor:middle; dominant-baseline:middle; }
+
+/*  1: Стили для "резины" */
+#trend {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 768px) { 
+  .wrap { padding: 0 8px; } 
+}
